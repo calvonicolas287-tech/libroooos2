@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Librería Zay - Tienda de Libros</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+
+<body>
+
+<!-- SPA quick navbar hooks -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <div class="container">
+    <a class="navbar-brand" href="/">Mi Librería</a>
+    <div class="d-flex">
+      <a href="#" id="spa-login" class="nav-link">Ingresar</a>
+      <a href="#" id="spa-cart" class="nav-link">Carrito (<span id="cart-count">0</span>)</a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@libreriazay.com">info@libreriazay.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                </div>
+                <div>
+                    <a class="text-light" href="#" target="_blank"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="#" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="#" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="#" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Librería Zay
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="cart.html">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span id="cart-count" class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+    <i class="fa fa-fw fa-user text-dark mr-3"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal de búsqueda -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Buscar libros...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Banner principal -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_libros_01.jpg" alt="Libros destacados">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1 text-success"><b>Librería Zay</b></h1>
+                                <h3 class="h2">Tu tienda de libros favorita</h3>
+                                <p>
+                                    Descubre los mejores títulos, autores y novedades en nuestra tienda online. ¡Encuentra tu próxima lectura aquí!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Puedes agregar más banners de libros aquí si lo deseas -->
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- Fin Banner principal -->
+
+    <!-- Categorías de libros -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Categorías del Mes</h1>
+                <p>
+                    Explora nuestras categorías destacadas: novela, infantil, ciencia ficción y más.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_novela.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Novela</h5>
+                <p class="text-center"><a class="btn btn-success">Ver libros</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_infantil.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Infantil</h5>
+                <p class="text-center"><a class="btn btn-success">Ver libros</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_ciencia.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Ciencia Ficción</h5>
+                <p class="text-center"><a class="btn btn-success">Ver libros</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Categorías de libros -->
+
+    <!-- Libros destacados -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Libros Destacados</h1>
+                    <p>
+                        Descubre nuestras recomendaciones de la semana.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Libro 1 -->
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="#">
+                            <img src="./assets/img/libro1.jpg" class="card-img-top" alt="Cien años de soledad">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$15.00</li>
+                            </ul>
+                            <a href="#" class="h2 text-decoration-none text-dark">Cien años de soledad</a>
+                            <p class="card-text">
+                                Gabriel García Márquez<br>
+                                Una de las obras más importantes de la literatura latinoamericana.
+                            </p>
+                            <button class="btn btn-success w-100 btn-agregar-carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Libro 2 -->
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="#">
+                            <img src="./assets/img/libro2.jpg" class="card-img-top" alt="El principito">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$10.00</li>
+                            </ul>
+                            <a href="#" class="h2 text-decoration-none text-dark">El principito</a>
+                            <p class="card-text">
+                                Antoine de Saint-Exupéry<br>
+                                Un clásico de la literatura universal para todas las edades.
+                            </p>
+                            <button class="btn btn-success w-100 btn-agregar-carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Libro 3 -->
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="#">
+                            <img src="./assets/img/libro3.jpg" class="card-img-top" alt="Don Quijote de la Mancha">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$18.00</li>
+                            </ul>
+                            <a href="#" class="h2 text-decoration-none text-dark">Don Quijote de la Mancha</a>
+                            <p class="card-text">
+                                Miguel de Cervantes<br>
+                                La obra más destacada de la literatura española.
+                            </p>
+                            <button class="btn btn-success w-100 btn-agregar-carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Libros destacados -->
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Librería Zay</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Calle de los Libros, Ciudad, País
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@libreriazay.com">info@libreriazay.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Categorías</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Novela</a></li>
+                        <li><a class="text-decoration-none" href="#">Infantil</a></li>
+                        <li><a class="text-decoration-none" href="#">Ciencia Ficción</a></li>
+                        <li><a class="text-decoration-none" href="#">Misterio</a></li>
+                        <li><a class="text-decoration-none" href="#">Fantasía</a></li>
+                        <li><a class="text-decoration-none" href="#">Historia</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Más información</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="#">Sobre Nosotros</a></li>
+                        <li><a class="text-decoration-none" href="#">Ubicación</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                        <li><a class="text-decoration-none" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Correo electrónico</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Correo electrónico">
+                        <div class="input-group-text btn-success text-light">Suscribirse</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2025 Librería Zay
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- Script para carrito -->
+    <script>
+    // Datos de ejemplo de los libros
+    const books = [
+        {
+            id: 1,
+            title: "Cien años de soledad",
+            author: "Gabriel García Márquez",
+            price: 15.00,
+            img: "assets/img/libro1.jpg"
+        },
+        {
+            id: 2,
+            title: "El principito",
+            author: "Antoine de Saint-Exupéry",
+            price: 10.00,
+            img: "assets/img/libro2.jpg"
+        },
+        {
+            id: 3,
+            title: "Don Quijote de la Mancha",
+            author: "Miguel de Cervantes",
+            price: 18.00,
+            img: "assets/img/libro3.jpg"
+        }
+    ];
+
+    // Actualiza el contador del carrito
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cart-count').textContent = cart.reduce((acc, item) => acc + item.qty, 0);
+    }
+
+    // Agrega libro al carrito
+    function addToCart(bookId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const book = books.find(b => b.id === bookId);
+        const existing = cart.find(item => item.id === bookId);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ ...book, qty: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+
+    // Asigna eventos a los botones
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCount();
+        document.querySelectorAll('.btn-agregar-carrito').forEach((btn, idx) => {
+            btn.addEventListener('click', function() {
+                addToCart(books[idx].id);
+            });
+        });
+    });
+    </script>
+    <!-- Modal de Login/Registro -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión o Crear cuenta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="loginEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="loginPassword" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Iniciar sesión</button>
+        </form>
+        <hr>
+        <p class="text-center mb-0">¿No tienes cuenta? <a href="#" id="showRegister">Crear cuenta</a></p>
+        <form id="registerForm" style="display:none;">
+          <div class="mb-3 mt-3">
+            <label for="registerEmail" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="registerEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="registerPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Crear cuenta</button>
+          <p class="text-center mt-2"><a href="#" id="showLogin">¿Ya tienes cuenta? Inicia sesión</a></p>
+        </form>
+        <div id="loginMessage" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const showRegister = document.getElementById('showRegister');
+    const showLogin = document.getElementById('showLogin');
+    const loginMessage = document.getElementById('loginMessage');
+
+    showRegister.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        loginMessage.innerHTML = '';
+    });
+
+    showLogin.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        loginMessage.innerHTML = '';
+    });
+
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const pass = document.getElementById('loginPassword').value;
+        if(email && pass) {
+            loginMessage.innerHTML = '<div class="alert alert-success">¡Sesión iniciada!</div>';
+            setTimeout(()=>{ location.reload(); }, 1000);
+        }
+    });
+
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('registerEmail').value;
+        const pass = document.getElementById('registerPassword').value;
+        if(email && pass) {
+            loginMessage.innerHTML = '<div class="alert alert-success">¡Cuenta creada! Ahora puedes iniciar sesión.</div>';
+            setTimeout(()=>{
+                registerForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                loginMessage.innerHTML = '';
+            }, 1500);
+        }
+    });
+});
+</script>
+    

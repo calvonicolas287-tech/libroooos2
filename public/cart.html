@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de compras - Librería Zay</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container py-5">
+    <h1>Carrito de compras</h1>
+    <div id="cart-items"></div>
+    <div class="mt-4 d-flex gap-2">
+      <a href="index.html" class="btn btn-secondary">Seguir buscando</a>
+      <button id="buy-now" class="btn btn-success">Comprar ahora</button>
+    </div>
+    <div id="buy-message" class="mt-3"></div>
+  </div>
+
+  <script>
+    // Muestra los libros del carrito
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        container.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+      }
+      let total = 0;
+      let html = '<table class="table"><thead><tr><th>Libro</th><th>Cantidad</th><th>Precio</th><th>Total</th></tr></thead><tbody>';
+      cart.forEach(item => {
+        const subtotal = item.price * item.qty;
+        total += subtotal;
+        html += `<tr>
+          <td>
+            <img src="${item.img || 'assets/img/libro1.jpg'}"
+                 alt="${item.title}"
+                 style="width:40px;height:60px;object-fit:cover;margin-right:10px;">
+            ${item.title} <br><small>${item.author}</small>
+          </td>
+          <td>${item.qty}</td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td>$${subtotal.toFixed(2)}</td>
+        </tr>`;
+      });
+      html += `</tbody></table><h4>Total: $${total.toFixed(2)}</h4>`;
+      container.innerHTML = html;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCart();
+      document.getElementById('buy-now').addEventListener('click', function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+          document.getElementById('buy-message').innerHTML =
+            '<div class="alert alert-warning">El carrito está vacío.</div>';
+          return;
+        }
+        // Aquí agregas lógica real de compra...
+        localStorage.removeItem('cart');
+        renderCart();
+        document.getElementById('buy-message').innerHTML =
+          '<div class="alert alert-success">¡Compra realizada con éxito!</div>';
+      });
+    });
+  </script>
+</body>
+</html>
